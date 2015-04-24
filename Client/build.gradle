@@ -1,0 +1,6 @@
+version = '1.0'
+
+task runSimple(dependsOn: classes, type:JavaExec) {
+    main = 'Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
