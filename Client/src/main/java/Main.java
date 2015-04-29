@@ -1,9 +1,7 @@
-/**
- * Created by window8 on 2015-04-24.
- */
 
 public class Main {
-    public static void main(String[] args){
-        System.out.println("test~~~~~!!!!!!!");
+    public static void main(String[] args) {
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.processs();
     }
 }

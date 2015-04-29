@@ -1,14 +1,34 @@
 package gui;
 
+
+import element.Box;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+
 public class GUIController {
     private Frame mainFrame;
+    private GameCanvas gameCanvas;
 
     public GUIController() {
         prepareGUI();
+        createCanvas();
+    }
+
+    public void repaint() {
+        gameCanvas.repaint();
+    }
+
+    public void createCanvas(){
+        gameCanvas = new GameCanvas();
+        gameCanvas.setSize(getSize());
+        mainFrame.add(gameCanvas);
+    }
+
+    public void addBoxes(Box[] boxes) {
+        gameCanvas.addBoxes(boxes);
     }
 
     private void prepareGUI() {
@@ -21,8 +41,9 @@ public class GUIController {
             }
         });
 
-        Panel gamePanel = new GamePanel(mainFrame.getSize());
-        mainFrame.add(gamePanel);
+    }
+    public Dimension getSize(){
+        return mainFrame.getSize();
     }
 
     public void showControl() {
